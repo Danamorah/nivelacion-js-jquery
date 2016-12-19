@@ -17,7 +17,11 @@ $(document).ready( function(){
     }
 
     hide(locations);
-
+    // pintar una noticia
+    function printNews(){
+        $(".callout-news").find($("p")).html("NUEVAS RECETAS");
+    }
+    printNews();
 
 });
 
