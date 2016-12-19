@@ -3,6 +3,22 @@ $(document).ready( function(){
 	//La variable "recipesArray" esta declarada en el archivo "data/recipes.js"
 	renderHighlightedRecipes(recipesArray);
 
+
+
+    // ocultar flecha cuando se muestra index.html
+    var locations = window.location.href;
+    function hide (locations){
+        if(locations.includes("index")){
+            $(".js-back").hide();
+        }
+        else if(locations.includes("recipe")){
+            $(".js-menu").hide();
+        }
+    }
+
+    hide(locations);
+
+
 });
 
 
