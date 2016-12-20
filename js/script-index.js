@@ -2,10 +2,11 @@ $(document).ready( function(){
 
 	//La variable "recipesArray" esta declarada en el archivo "data/recipes.js"
 	renderHighlightedRecipes(recipesArray);
-    for (var i = 0 ; i < recipesArray.length ; i++){
+    var length = recipesArray.length;
+    for (var i = 0 ; i < length; i++){
         // verificar highlited = true
         if(recipesArray[i].highlighted === true ){
-            renderRecipe(this.recipesArray);
+            renderRecipe(recipesArray[i]);
            }
     }
 
@@ -47,8 +48,8 @@ function renderHighlightedRecipes(recipesArray) {
 * archivo "templates/templates-recipe.html"
 */
 function renderRecipe(recipe) {
-    var title = recipesArray.title;
-    var author = recipesArray.source.name;
+    var title = recipe.title;
+    var author = recipe.source.name;
     $(".list-recipes").append($("<ul></ul>"));
     $(".list-recipes > ul").append($("<li>" + title + "</li>"));
     $(".list-recipes > ul ").append($("<li>" + author + "</li>"));
