@@ -5,7 +5,7 @@ $(document).ready( function(){
     for (var i = 0 ; i < recipesArray.length ; i++){
         // verificar highlited = true
         if(recipesArray[i].highlighted === true ){
-            renderRecipe(this.recipesArray.highlighted);
+            renderRecipe(this.recipesArray);
            }
     }
 
@@ -47,7 +47,12 @@ function renderHighlightedRecipes(recipesArray) {
 * archivo "templates/templates-recipe.html"
 */
 function renderRecipe(recipe) {
-	console.log('Voy a pintar la receta: ', recipe);
+    var title = recipesArray.title;
+    var author = recipesArray.source.name;
+    $(".list-recipes").append($("<p>" + title + "</p>"));
+    $(".list-recipes").append($("<p>" + author + "</p>"));
+	//console.log('Voy a pintar la receta: ', recipe);
+
 }
 
 
