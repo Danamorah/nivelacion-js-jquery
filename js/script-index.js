@@ -49,8 +49,9 @@ function renderHighlightedRecipes(recipesArray) {
 function renderRecipe(recipe) {
     var title = recipesArray.title;
     var author = recipesArray.source.name;
-    $(".list-recipes").append($("<p>" + title + "</p>"));
-    $(".list-recipes").append($("<p>" + author + "</p>"));
+    $(".list-recipes").append($("<ul></ul>"));
+    $(".list-recipes > ul").append($("<li>" + title + "</li>"));
+    $(".list-recipes > ul ").append($("<li>" + author + "</li>"));
 	//console.log('Voy a pintar la receta: ', recipe);
 
 }
